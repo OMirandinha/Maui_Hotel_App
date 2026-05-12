@@ -1,10 +1,10 @@
-# MauiAppHotel
+# Hotel App
 
 Sistema de reserva de hospedagem desenvolvido com .NET MAUI para cálculo de diárias e gestão de reservas.
 
 ## Sobre o Projeto
 
-O MauiAppHotel é um aplicativo multiplataforma que permite aos usuários calcular o valor de estadia em um hotel, considerando:
+O Hotel App é um aplicativo multiplataforma que permite aos usuários calcular o valor de estadia em um hotel, considerando:
 - Tipo de suíte
 - Número de hóspedes (adultos e crianças)
 - Período de estadia (check-in e check-out)
