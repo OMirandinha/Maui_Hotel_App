@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FFF8F0">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10"
+                         Spacing="10">
+
+        <Label Text="Cálculo da Diária"
+               FontFamily="Kalam"
+               FontSize="50"
+               TextColor="#FF6B6B" />
+
+        <Frame Padding="10"
+               BackgroundColor="#FFFFFF"
+               CornerRadius="15"
+               HasShadow="True">
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="*, *, 2*">
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Adultos:"
+                           TextColor="#4A4A4A" />
+
+                    <Label Grid.Row="0" Grid.Column="1"
+                           TextColor="#FF6B6B"
+                           FontAttributes="Bold"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_adultos}"/>
+
+                    <Stepper Grid.Row="0" Grid.Column="2"
+                             BackgroundColor="#FF6B6B"                            
+                             x:Name="stp_adultos"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1" />
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Crianças:"
+                           TextColor="#4A4A4A" />
+
+                    <Label Grid.Row="1" Grid.Column="1"
+                           TextColor="#FF6B6B"
+                           FontAttributes="Bold"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_criancas}"/>
+
+                    <Stepper Grid.Row="1" Grid.Column="2"
+                             BackgroundColor="#FF6B6B" 
+                             x:Name="stp_criancas"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1" />
+                </Grid>
+
+                <Frame Padding="10" Margin="10"
+                       BackgroundColor="#FFF0F0"
+                       CornerRadius="10">
+                    <VerticalStackLayout>
+
+                        <Label Text="Escolha sua Suíte"
+                           TextTransform="Uppercase"
+                           FontSize="Subtitle"
+                           TextColor="#FF6B6B"
+                           FontAttributes="Bold"/>
+
+                        <Picker x:Name="pck_quarto"                               
+                            Title="Selecione sua Acomodação"
+                            BackgroundColor="White"
+                            TextColor="#4A4A4A"
+                            TitleColor="#FF6B6B"
+                            FontSize="14"
+                            HeightRequest="70">
+                            <Picker.Items>
+                                <x:String>Suíte standard - R$ 150,00</x:String>
+                                <x:String>Suíte dupla - R$ 200,00</x:String>
+                                <x:String>Suíte deluxe - R$ 300,00</x:String>
+                                <x:String>Suíte presidencial - R$ 450,00</x:String>
+                            </Picker.Items>
+                        </Picker>
+
+                    
+
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Padding="10"
+                       Margin="10"
+                       BackgroundColor="#FFF0F0"
+                       CornerRadius="10">
+                    <VerticalStackLayout Spacing="10">
+
+                        <Label Text="Período da Estadia"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"
+                               TextColor="#FF6B6B"
+                               FontAttributes="Bold"/>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Check-in:" 
+                                   TextColor="#4A4A4A"/>
+                            <DatePicker x:Name="dtpck_checkin"
+                                        TextColor="#4A4A4A"
+                                        Format="dd/MM/yyyy" />
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Check-out:" 
+                                   TextColor="#4A4A4A"/>
+                            <DatePicker x:Name="dtpck_checkout"
+                                        TextColor="#4A4A4A"
+                                        Format="dd/MM/yyyy" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+
+                <!-- Label para exibir os resultados do cálculo -->
+                <Frame Padding="15"
+               Margin="10"
+               BackgroundColor="#FFF0F0"
+               CornerRadius="10"
+               IsVisible="False"
+               x:Name="frameResultado">
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="RESUMO DA RESERVA"
+               FontSize="14"
+               FontAttributes="Bold"
+               TextColor="#FF6B6B"
+               HorizontalOptions="Center"/>
+
+                        <Label x:Name="lblResumoQuarto"
+               Text=""
+               FontSize="13"
+               TextColor="#4A4A4A"/>
+
+                        <Label x:Name="lblResumoHospedes"
+               Text=""
+               FontSize="13"
+               TextColor="#4A4A4A"/>
+
+                        <Label x:Name="lblResumoDias"
+               Text=""
+               FontSize="13"
+               TextColor="#4A4A4A"/>
+
+                        <Label x:Name="lblResumoDiarias"
+               Text=""
+               FontSize="13"
+               TextColor="#4A4A4A"/>
+
+                        <Label x:Name="lblResumoTaxa"
+               Text=""
+               FontSize="13"
+               TextColor="#4A4A4A"/>
+
+                        <BoxView HeightRequest="1" 
+                 Color="#FFCCCC"
+                 Margin="0,5"/>
+
+                        <Label x:Name="lblResumoTotal"
+               Text=""
+               FontSize="16"
+               FontAttributes="Bold"
+               TextColor="#FF6B6B"
+               HorizontalOptions="End"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Button Text="Calcular Reserva"
+        BackgroundColor="#FF6B6B"
+        TextColor="White"
+        CornerRadius="10"
+        Clicked="OnCalcularReserva"/>
+
+                <Button Text="Limpar"
+        BackgroundColor="#CCCCCC"
+        TextColor="#4A4A4A"
+        CornerRadius="10"
+        Margin="0,5,0,0"
+        Clicked="OnLimpar"/>
+
+            </VerticalStackLayout>
+        </Frame>
+
+
+        <Button Text="Sobre"
+        BackgroundColor="#CCCCCC"
+        TextColor="#4A4A4A"
+        CornerRadius="10"
+        Clicked="OnAbrirSobre"
+        Margin="0,5,0,0"/>
+
+    </VerticalStackLayout>
+
+
+</ContentPage>
