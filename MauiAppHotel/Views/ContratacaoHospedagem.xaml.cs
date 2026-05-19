@@ -65,4 +65,9 @@ public partial class ContratacaoHospedagem : ContentPage
     {
         await Navigation.PushAsync(new Sobre());
     }
+
+    private async void OnAbrirTabelaPrecos(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new TabelaPrecos());
+    }
 }

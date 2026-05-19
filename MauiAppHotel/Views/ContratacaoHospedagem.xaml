@@ -4,7 +4,7 @@
              x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
              Title="ContratacaoHospedagem"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#FFF8F0">
+             BackgroundColor="#000000">
 
     <VerticalStackLayout VerticalOptions="CenterAndExpand"
                          Padding="10"
@@ -13,10 +13,10 @@
         <Label Text="Cálculo da Diária"
                FontFamily="Kalam"
                FontSize="50"
-               TextColor="#FF6B6B" />
+               TextColor="#FFFFFF" />
 
         <Frame Padding="10"
-               BackgroundColor="#FFFFFF"
+               BackgroundColor="#392A48"
                CornerRadius="15"
                HasShadow="True">
             <VerticalStackLayout>
@@ -25,7 +25,7 @@
 
                     <Label Grid.Row="0" Grid.Column="0"
                            Text="Adultos:"
-                           TextColor="#4A4A4A" />
+                           TextColor="#FF6B6B" />
 
                     <Label Grid.Row="0" Grid.Column="1"
                            TextColor="#FF6B6B"
@@ -42,7 +42,7 @@
 
                     <Label Grid.Row="1" Grid.Column="0"
                            Text="Crianças:"
-                           TextColor="#4A4A4A" />
+                           TextColor="#FF6B6B" />
 
                     <Label Grid.Row="1" Grid.Column="1"
                            TextColor="#FF6B6B"
@@ -59,7 +59,7 @@
                 </Grid>
 
                 <Frame Padding="10" Margin="10"
-                       BackgroundColor="#FFF0F0"
+                       BackgroundColor="#392A48"
                        CornerRadius="10">
                     <VerticalStackLayout>
 
@@ -84,14 +84,22 @@
                             </Picker.Items>
                         </Picker>
 
-                    
+                        <Button Text="Ver Tabela de Preços"
+                        BackgroundColor="#FF9800"
+                        TextColor="White"
+                        CornerRadius="8"
+                        Clicked="OnAbrirTabelaPrecos"
+                        HeightRequest="40"
+                        Margin="0,5,0,15"/>
+
+
 
                     </VerticalStackLayout>
                 </Frame>
 
                 <Frame Padding="10"
                        Margin="10"
-                       BackgroundColor="#FFF0F0"
+                       BackgroundColor="#392A48"
                        CornerRadius="10">
                     <VerticalStackLayout Spacing="10">
 
@@ -103,17 +111,17 @@
 
                         <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-in:" 
-                                   TextColor="#4A4A4A"/>
+                                   TextColor="#FFFFFF"/>
                             <DatePicker x:Name="dtpck_checkin"
-                                        TextColor="#4A4A4A"
+                                        TextColor="#FFFFFF"
                                         Format="dd/MM/yyyy" />
                         </HorizontalStackLayout>
 
                         <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-out:" 
-                                   TextColor="#4A4A4A"/>
+                                   TextColor="#FFFFFF"/>
                             <DatePicker x:Name="dtpck_checkout"
-                                        TextColor="#4A4A4A"
+                                        TextColor="#FFFFFF"
                                         Format="dd/MM/yyyy" />
                         </HorizontalStackLayout>
                     </VerticalStackLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.TabelaPrecos"
+             Title="Tabela de Precos">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="20">
+
+            <!-- Titulo -->
+            <Label Text="Tabela de Precos por Diaria" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,10"/>
+
+            <!-- Suite Standard -->
+            <Frame BorderColor="#2196F3" CornerRadius="10" Padding="10">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Suite Standard" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="Cama queen, TV LCD, frigobar, varanda"
+                           FontSize="12" TextColor="Gray"/>
+                    <BoxView HeightRequest="1" Color="#E0E0E0" Margin="0,5"/>
+                    <Label Text="R$ 150,00 / diaria" FontSize="16" TextColor="#2196F3"/>
+                    <Label Text="+ Taxas conforme reserva" FontSize="11" TextColor="Gray"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Suite Luxo -->
+            <Frame BorderColor="#9C27B0" CornerRadius="10" Padding="10">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Suite Luxo" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="Cama king, banheira, sacada, vista para o mar"
+                           FontSize="12" TextColor="Gray"/>
+                    <BoxView HeightRequest="1" Color="#E0E0E0" Margin="0,5"/>
+                    <Label Text="R$ 200,00 / diaria" FontSize="16" TextColor="#9C27B0"/>
+                    <Label Text="+ Taxas conforme reserva" FontSize="11" TextColor="Gray"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Suite Master -->
+            <Frame BorderColor="#FF9800" CornerRadius="10" Padding="10">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Suite Master" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="Cama king, hidromassagem, cozinha, 2 varandas"
+                           FontSize="12" TextColor="Gray"/>
+                    <BoxView HeightRequest="1" Color="#E0E0E0" Margin="0,5"/>
+                    <Label Text="R$ 300,00 / diaria" FontSize="16" TextColor="#FF9800"/>
+                    <Label Text="+ Taxas conforme reserva" FontSize="11" TextColor="Gray"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Suite Presidencial -->
+            <Frame BorderColor="#4CAF50" CornerRadius="10" Padding="10">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Suite Presidencial" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="Cama king, jacuzzi, sauna, 150m, mordomo"
+                           FontSize="12" TextColor="Gray"/>
+                    <BoxView HeightRequest="1" Color="#E0E0E0" Margin="0,5"/>
+                    <Label Text="R$ 450,00 / diaria" FontSize="16" TextColor="#4CAF50"/>
+                    <Label Text="+ Taxas conforme reserva" FontSize="11" TextColor="Gray"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Informacoes adicionais -->
+            <Frame BackgroundColor="#FFF3E0" CornerRadius="10" Padding="10">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Informacoes importantes" 
+                           FontAttributes="Bold" 
+                           TextColor="#E65100"/>
+                    <Label Text="- Valores por diaria (check-in ao meio-dia)" FontSize="12" TextColor="Black"/>
+                    <Label Text="- Taxa de servico: 10% sobre diarias" FontSize="12" TextColor="Black"/>
+                    <Label Text="- Taxa de limpeza: R$ 50,00 (unica)" FontSize="12" TextColor="Black"/>
+                    <Label Text="- Criancas: R$ 10,00/dia" FontSize="12" TextColor="Black"/>
+                    <Label Text="- Adicional por hospede: R$ 15,00/dia" FontSize="12" TextColor="Black"/>
+                    <Label Text="- Sujeito a disponibilidade" FontSize="12" TextColor="Red"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Botao Voltar -->
+            <Button Text="Voltar para Reserva"
+                    BackgroundColor="#607D8B"
+                    TextColor="White"
+                    CornerRadius="8"
+                    HeightRequest="50"
+                    Clicked="OnVoltarClicked"
+                    Margin="0,10"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
